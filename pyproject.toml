@@ -1,0 +1,23 @@
+[project]
+name = "ito-game"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "yumion", email = "a.yamada0703@gmail.com" }
+]
+dependencies = [
+    "flask>=3.0.2",
+]
+readme = "README.md"
+requires-python = ">= 3.10"
+
+[build-system]
+requires = ["hatchling<=1.18.0"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
