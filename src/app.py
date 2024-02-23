@@ -1,6 +1,7 @@
+import os
 import random
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 
 app = Flask(__name__)
 
@@ -33,6 +34,13 @@ def get():
         return jsonify({"message": "No more numbers. Please reset."}), 200
     your_number = numbers_list.pop()
     return jsonify({"number": your_number}), 200
+
+
+@app.route("/favicon.ico")
+def favicon():
+    return send_from_directory(
+        os.path.join(app.root_path, "static"), "favicon.ico", mimetype="image/vnd.microsoft.icon"
+    )
 
 
 if __name__ == "__main__":
